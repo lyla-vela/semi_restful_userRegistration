@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+    <head>
+           
+            <meta charset="utf-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1">
+            <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+            <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+            <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+            <style>
+                
+                button{width: 70px;
+                      height: 30px;
+                }
+            </style>
+    <title>
+        User information
+    </title>
+    </head>
+    <body>
+        <main role="main">
+        <h2>USER INFORMATION</h2>
+        
+            <div class="card">
+                <h5 class="card-header">Information submitted</h5>
+                <div class="card-body">
+                    <label>Name : </label> {{user.first_name}} <br>
+                    <label>Last name : </label> {{user.last_name}} <br>
+                    <label>Email : </label> {{user.email}} <br>
+                   
+                    <a href="{% url 'my_index' %}" class="btn btn-primary">Go back</a>
+                </div>
+            </div>
+           
+          
+        </main>
+    </body>
+</html>

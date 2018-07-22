@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+    <head>
+           
+            <meta charset="utf-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1">
+            <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+            <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+            <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+            <style>
+                
+                button{width: 70px;
+                      height: 30px;
+                }
+            </style>
+    <title>
+        Semi_restful user update
+    </title>
+    </head>
+    <body>
+        <header>
+            <div class="navbar navbar-dark bg-dark box-shadow">
+                <div class="container d-flex justify-content-between">
+                </div>
+            </div>
+        </header>
+        <main role="main">
+                <section class="jumbotron text-center">
+                        <div class="container">
+                          <h1 class="jumbotron-heading">Update User # {{user.id}}</h1>
+                          <p class="lead text-muted"></p>
+                          <p>
+                            <a href="#registration" class="btn btn-primary my-2">Update</a>
+                            <!-- <a href="#login" class="btn btn-secondary my-2">Login</a> -->
+                           
+                          </p>
+                        </div>
+                      </section>
+                <form action="/update" method="POST">
+                    {% csrf_token %}
+                    <div class="album py-5 bg-light">
+                            <div class="container">
+                               <!-- <form action='/checkfields' method='post'> -->
+                                  <h4 class="mb-3" id='registration'>Update User Information # {{user.id}}</h4>
+                                  <input type="hidden" name="hdnID" value="{{user.id}}">
+                                  <div class="row">
+                                      <div class="col-md-6 mb-3">
+                                          <label for="firstName">First name</label>
+                                          <input type="text" class="form-control" name="first_name" placeholder="" value="{{user.first_name}}">
+                                         
+                                      </div>
+                                      <div class="col-md-6 mb-3">
+                                          <label for="lastName">Last name</label>
+                                          <input type="text" class="form-control" name="last_name" placeholder="" value="{{user.last_name}}">
+                                          
+                                      </div>
+                                      <div class="col-md-6 mb-3">
+                                            <label for="lastName">Email</label>
+                                            <input type="text" class="form-control" name="email" placeholder="" value="{{user.email}}">
+                                            
+                                      </div>
+                                        <!-- <div class="col-md-6 mb-3">
+                                            <label for="password">Password</label>
+                                            <input type="password" class="form-control" name="password" placeholder="" value="">
+                                            
+                                        </div>
+                                        <div class="col-md-6 mb-3">
+                                            <label for="password">Confirm Password</label>
+                                            <input type="password" class="form-control" name="password1" placeholder="" value="">
+                                            
+                                        </div> -->
+                                    </div>
+                                    
+                                  <hr class="mb-4">
+                                  <button class="btn btn-primary btn-lg btn-block" type="submit">Update user information</button>
+                                  <a href="/all_userx/{{user.id}}">Show</a> | <a href="/all_userx">Go Back</a>
+                    
+                </form>     
+        </main>
+    </body>
+</html>
+
